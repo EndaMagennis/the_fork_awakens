@@ -24,6 +24,7 @@ for (let i = 0; i < stars; i++) {
   star.style.right = xy[0] + 'px';
   star.style.left = xy[0] + 'px';
   star.style.top = xy[1] + 'px';
+
   // Add the star to the document body
   document.body.append(star);
 }
@@ -50,4 +51,16 @@ window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = 'none';
   }
+};
+
+// Start button
+const start = document.getElementById('startBtn');
+const movies = document.getElementById('movie-container');
+
+start.onclick = function () {
+  movies.style.opacity = '0';
+  // Start the animation to fade slowly
+  setTimeout(function () {
+    movies.style.display = 'none';
+  }, 1000); // match this with the duration of your transition
 };
